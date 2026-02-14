@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz San Valentín 💕</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html, body{
+    background:#ffffff;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Playfair Display', serif;
+}
+
+/* ===== TÍTULO DORADO ===== */
+.titulo{
+    text-align:center;
+    margin:28px 0 10px;
+    font-size:2.5rem;
+    font-weight:600;
+    letter-spacing:1.8px;
+    background:linear-gradient(135deg,#b8860b,#ffd97a,#b8860b);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 3px 10px rgba(184,134,11,.35);
+    animation:brilloTexto 4s ease-in-out infinite;
+}
+
+@keyframes brilloTexto{
+    0%{ filter:brightness(1); }
+    50%{ filter:brightness(1.3); }
+    100%{ filter:brightness(1); }
+}
+
+.subtitulo{
+    display:block;
+    margin-top:6px;
+    font-size:1.7rem;
+    font-weight:500;
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel{
+    position:relative;
+    width:100%;
+    height:380px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+}
+
+.pista{
+    display:flex;
+    gap:38px;
+    width:max-content;
+    animation:desplazar 45s linear infinite;
+}
+
+@keyframes desplazar{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+/* ===== MARCOS DORADOS ===== */
+.marco{
+    --i:0;
+    width:190px;
+    height:270px;
+    padding:12px;
+    border-radius:28px;
+    background:linear-gradient(135deg,#c9a24d,#fff1a8,#c9a24d);
+    box-shadow:0 0 14px rgba(201,162,77,.6);
+    animation:brilloMarco 4s ease-in-out infinite;
+    transform:translateY(calc(sin(var(--i)) * 60px));
+    flex-shrink:0;
+}
+
+@keyframes brilloMarco{
+    0%{
+        box-shadow:0 0 12px rgba(201,162,77,.5),
+                   0 0 26px rgba(201,162,77,.4);
+    }
+    50%{
+        box-shadow:0 0 22px rgba(255,241,168,.95),
+                   0 0 44px rgba(255,241,168,.6);
+    }
+    100%{
+        box-shadow:0 0 12px rgba(201,162,77,.5),
+                   0 0 26px rgba(201,162,77,.4);
+    }
+}
+
+.marco img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* ===== MUÑECO ===== */
+.muneco{
+    position:absolute;
+    bottom:90px;
+    left:50%;
+    transform:translateX(-50%);
+    height:260px;
+    z-index:5;
+}
+
+/* ===== AUDIO ===== */
+.audio{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+audio{ width:230px; }
+</style>
+</head>
+
+<body>
+
+<div class="titulo">
+  Feliz San Valentín
+  <span class="subtitulo">Siempre juntos tú y yo 💕</span>
+</div>
+
+<div class="carrusel">
+<div class="pista">
+
+<!-- ORIGINAL -->
+<div class="marco" style="--i:-2;"><img src="foto1.jpg"></div>
+<div class="marco" style="--i:-1.6;"><img src="foto2.jpg"></div>
+<div class="marco" style="--i:-1.2;"><img src="foto3.jpg"></div>
+<div class="marco" style="--i:-0.8;"><img src="foto4.jpg"></div>
+<div class="marco" style="--i:-0.4;"><img src="foto5.jpg"></div>
+<div class="marco" style="--i:0;"><img src="foto6.jpg"></div>
+<div class="marco" style="--i:0.4;"><img src="foto7.jpg"></div>
+<div class="marco" style="--i:0.8;"><img src="foto8.jpg"></div>
+<div class="marco" style="--i:1.2;"><img src="foto9.jpg"></div>
+<div class="marco" style="--i:1.6;"><img src="foto10.jpg"></div>
+<div class="marco" style="--i:2;"><img src="foto11.jpg"></div>
+
+<!-- COPIA PARA LOOP INFINITO -->
+<div class="marco" style="--i:-2;"><img src="foto1.jpg"></div>
+<div class="marco" style="--i:-1.6;"><img src="foto2.jpg"></div>
+<div class="marco" style="--i:-1.2;"><img src="foto3.jpg"></div>
+<div class="marco" style="--i:-0.8;"><img src="foto4.jpg"></div>
+<div class="marco" style="--i:-0.4;"><img src="foto5.jpg"></div>
+<div class="marco" style="--i:0;"><img src="foto6.jpg"></div>
+<div class="marco" style="--i:0.4;"><img src="foto7.jpg"></div>
+<div class="marco" style="--i:0.8;"><img src="foto8.jpg"></div>
+<div class="marco" style="--i:1.2;"><img src="foto9.jpg"></div>
+<div class="marco" style="--i:1.6;"><img src="foto10.jpg"></div>
+<div class="marco" style="--i:2;"><img src="foto11.jpg"></div>
+
+</div>
+</div>
+
+<img src="muneco.png" class="muneco">
+
+<div class="audio">
+<audio controls loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+</body>
+</html>
